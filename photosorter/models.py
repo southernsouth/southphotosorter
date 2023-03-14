@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+
+class SystemSettings(models.Model):
+    key = models.CharField('Key', max_length = 500)
