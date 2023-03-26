@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>South Photo sorter</title>
+    <style type='text/css'>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        #frame_main {
+            background-color: #f5f8ff;
+            width: 100%;
+            height: 100%;
+        }
+
+        #frame_1 {
+            position: relative;
+            left: 20%;
+            width: 60%;
+            height: 64 px;
+            background-color: #f5f8ff;
+            border-bottom: 1px solid #374151;
+        }
+
+        #frame_2 {
+            position: absolute;
+            left: 20%;
+            width: 60%;
+            height: 100%;
+            background-color: #f5f8ff;
+        }
+
+        #frame_files {
+            position: relative;
+            top: 10%;
+            left: 20%;
+            width: 60%;
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: dashed #0084ff;
+        }
+
+        input {
+            cursor: pointer;
+        }
+
+        button {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30%;
+            height: 5%;
+            font-size: 50 px;
+            background-color: #0084ff;
+            border-radius: 10px;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 30px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+    </style>
+  </head>
+  <body>
+    {% block pagecontent %}
+    {% load static %}
+    <div id='frame_main'>
+        <div id='frame_1'>
+            <img src="{% static 'logo.png' %}" height="64 px" width="273 px">
+        </div>
+        <div id='frame_2'>
+            <div id='frame_files'>
+                <input type='file' accept='image/*' multiple>
+            </div>
+            <button type='button'>
+                <b> Sort </b>
+            </button>
+        </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
